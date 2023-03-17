@@ -1,0 +1,120 @@
+<html>
+
+<head>
+  <link rel="stylesheet" hrer="user-dash.component.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />"
+</head>
+
+<body>
+  <nav>
+    <a href="/dash">
+      <i class="fas fa-user"></i>
+      <span class="nav-item">User</span>
+    </a>
+    <a href="/admin.con">
+      <i class="fas fa-tasks"></i>
+      <span class="nav-item">Content</span>
+    </a>
+
+  </nav>
+</body>
+</html>
+
+<p align="right">
+  <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">ADD</button>
+</p>
+<br>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col"></th>
+      <th scope="col">id</th>
+      <th scope="col">Username</th>
+      <th scope="col">role</th>
+      <th scope="col">Password</th>
+      <!-- <th scope="col"></th> -->
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let display of GetAlls">
+      <th></th>
+      <th></th>
+      <td>{{display.id}}</td>
+      <td>{{display.Username}}</td>
+      <td>{{display.role}}</td>
+      <td>{{display.Password}}</td>
+      <!-- <td><button type="button" class="btn btn-success" type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop2" (click)="editBlogs(display)" >EDIT</button></td> -->
+      <td><button type="button" class="btn btn-danger" (click)="delBlogs(display)">DELETE</button></td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Add Data</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="formvalue">
+          <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input formControlName="Username" type="name" class="form-control" id="username"
+              aria-describedby="emailHelp">
+          </div>
+          <div class="mb-3">
+            <label for="role" class="form-label">role</label>
+            <input formControlName="role" type="role" class="form-control" id="role" aria-describedby="emailHelp">
+          </div>
+          <div class="mb-3">
+            <label for="Password" class="form-label">Password</label>
+            <input formControlName="Password" type="password" class="form-control" id="Password">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)="addBlog()">ADD</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 22222222222222222222222222222222 -->
+<!-- <div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Edit Data</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="formvalue">
+          <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input formControlName="Username" type="name" class="form-control" id="username"
+              aria-describedby="emailHelp">
+          </div>
+          <div class="mb-3">
+            <label for="role" class="form-label">role</label>
+            <input formControlName="role" type="role" class="form-control" id="role" aria-describedby="emailHelp">
+          </div>
+          <div class="mb-3">
+            <label for="Password" class="form-label">Password</label>
+            <input formControlName="Password" type="password" class="form-control" id="Password">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" >EDIT</button>
+      </div>
+    </div>
+  </div>
+</div> -->

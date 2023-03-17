@@ -1,0 +1,11 @@
+<form [formGroup]="loginForm" (ngSubmit)="gotoLogin()">
+    <div class="mb-3">
+        <label for="User" class="form-label">User</label>
+        <input type="User" class="form-control" id="User" aria-describedby="emailHelp" formControlName="User">
+    </div>
+    <div class="mb-3">
+        <label for="Password" class="form-label">Password</label>
+        <input type="Password" class="form-control" id="exampleInputPassword1" formControlName="Password">
+    </div>
+    <button class="btn btn-outline-success" type="submit">Login</button>
+</form>

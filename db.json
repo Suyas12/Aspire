@@ -1,0 +1,65 @@
+{
+  "user": [
+    {
+      "id": 1,
+      "Username": "admin",
+      "role": "admin",
+      "Password": "admin"
+    },
+    {
+      "id": 2,
+      "Username": "suyas",
+      "role": "user",
+      "Password": "suyas"
+    },
+    {
+      "id": 3,
+      "Username": "awasthi",
+      "role": "user",
+      "Password": "awasthi"
+    },
+    {
+      "id": 4,
+      "Username": "home",
+      "role": "admin",
+      "Password": "home"
+    },
+    {
+      "id": 5,
+      "Username": "ghar",
+      "role": "admin",
+      "Password": "ghar"
+    },
+    {
+      "id": 8,
+      "Username": "wqw",
+      "role": "user",
+      "Password": "qwwewe"
+    }
+  ],
+  "blog": [
+    {
+      "Username": "suyas",
+      "title": "The art of quitting lessons from my Ph.D. journe",
+      "description": "Advice Column for Graduate Students and Applicants",
+      "url": "https://miro.medium.com/v2/resize:fill:200:134/1*4-WRim5zyfn8nGYjtuUEdQ.jpeg"
+    },
+    {
+      "Username": "awasthi",
+      "title": "GPT Is an Unreliable Information Store",
+      "description": "Understanding the limitations and dangers of large language models",
+      "url": "https://miro.medium.com/v2/resize:fill:200:134/1*Z9Msl9UY6vp_c-dIHzYqPQ.jpeg"
+    },
+    {
+      "Username": "wqw",
+      "title": "No, ASAP Rocky And Jonathan Majors Are Not Being Emasculated",
+      "description": "“Emasculate” is one of those words I wish more folks simply hadn’t learned.",
+      "url": "https://miro.medium.com/v2/resize:fill:200:134/1*tD2OD40pNWLAoMqY5VXXOg.jpeg"
+    },
+    {
+      "title": "Hello this is an example blog",
+      "description": "jjnkhughjjgh",
+      "url": "olskdsdkasdkjaskdjaldks"
+    }
+  ]
+}

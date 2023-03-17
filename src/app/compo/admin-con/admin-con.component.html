@@ -1,0 +1,92 @@
+<html>
+<head>
+  <link rel="stylesheet" hrer="user-dash.component.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />"
+</head>
+
+<body>
+  <nav>
+    <a href="/dash">
+      <i class="fas fa-user"></i>
+      <span class="nav-item">User</span>
+    </a>
+    <a href="/admin.con">
+      <i class="fas fa-tasks"></i>
+      <span class="nav-item">Content</span>
+    </a>
+
+  </nav>
+</body>
+
+</html>
+<!-- <p align="right">
+  <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">ADD</button>
+</p> -->
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col"></th>
+      <th scope="col">Username</th>
+      <th scope="col">Blog</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let display of Getblog">
+      <th></th>
+      <th></th>
+      <td>{{display.Username}}</td>
+      <td>
+        <tr *ngFor="let blog of Getblog">
+          <!-- <td>{{display.title}}</td>
+          <td>{{display.description}}</td>
+          <td>{{display.url}}</td> -->
+      </td>
+      <th></th>
+      <!-- <td><button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal2">EDIT</button></td> -->
+      <td><button type="button" class="btn btn-danger" (click)="delBlogs(display)">DELETE</button></td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Blogs</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="formvalue"> -->
+          <!-- <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input formControlName="Username" type="name" class="form-control" id="username"
+              aria-describedby="emailHelp">
+          </div> -->
+          <!-- <div class="mb-3">
+            <label for="username" class="form-label">Title</label>
+            <input formControlName="title" type="title" class="form-control" id="title"
+              aria-describedby="emailHelp">
+          </div>
+          <div class="mb-3">
+            <label for="role" class="form-label">Description</label>
+            <input formControlName="description" type="description" class="form-control" id="description" aria-describedby="emailHelp">
+          </div>
+          <div class="mb-3">
+            <label for="url" class="form-label">Url</label>
+            <input formControlName="url" type="url" class="form-control" id="url"
+            aria-describedby="emailHelp">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)="addedBlog()">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div> -->
