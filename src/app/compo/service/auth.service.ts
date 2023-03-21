@@ -32,13 +32,20 @@ export class AuthService{
     return this.http.delete<any>("http://localhost:3000/user/"+id).pipe(map((res:any)=>{
       return res;
     }))
-  }  
+  }
   apiul='http://localhost:3000/user/?role=user';
   apiurl='http://localhost:3000/user';
   apiblg='http://localhost:3000/blog';
 
   Getblog(){
     return this.http.get(this.apiblg);
+  }
+  GetblogById(code:any){
+    return this.http.get(this.apiblg+'/?Username='+`${code}`);
+  }
+  
+  Postblog(code:any){
+    return this.http.post(this.apiblg,code);
   }
   GetAlls(){
     return this.http.get(this.apiul);

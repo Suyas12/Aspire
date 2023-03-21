@@ -17,5 +17,8 @@ export class HeaderComponent {
     else{
       return false;
     }
-  }  
+  } 
+  sessionlogout(){
+    sessionStorage.clear();
+  }
 }

@@ -35,12 +35,18 @@ export class LoginComponent {
         // showBtn = false; 
         this.ispersonlog=true;
         this.auth.isperson(this.ispersonlog);
+        sessionStorage.setItem('user', JSON.stringify(element));
         alert("Login Successfully");
         this.router.navigate(['/dash']);
       }
       else if (element.role == 'user' && element.Password == this.loginForm.value.Password && element.Username == this.loginForm.value.User) {
         this.ispersonlog=true;
         this.auth.isperson(this.ispersonlog);
+        console.log(element.Username);
+        
+        sessionStorage.setItem('username', element.Username); 
+        // console.log(this.showData[1]);
+        sessionStorage.setItem('user', JSON.stringify(element));
         alert("Login Successfully");
         this.router.navigate(['/user.dash']);
       }

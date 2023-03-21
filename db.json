@@ -35,6 +35,15 @@
       "Username": "wqw",
       "role": "user",
       "Password": "qwwewe"
+    },
+    {
+      "id": 9,
+      "Username": "gaurang",
+      "role": "user",
+      "Password": "gaurang",
+      "title": "",
+      "description": "",
+      "url": ""
     }
   ],
   "blog": [
@@ -42,24 +51,85 @@
       "Username": "suyas",
       "title": "The art of quitting lessons from my Ph.D. journe",
       "description": "Advice Column for Graduate Students and Applicants",
-      "url": "https://miro.medium.com/v2/resize:fill:200:134/1*4-WRim5zyfn8nGYjtuUEdQ.jpeg"
+      "url": "https://miro.medium.com/v2/resize:fill:200:134/1*4-WRim5zyfn8nGYjtuUEdQ.jpeg",
+      "id": 1
     },
     {
       "Username": "awasthi",
       "title": "GPT Is an Unreliable Information Store",
       "description": "Understanding the limitations and dangers of large language models",
-      "url": "https://miro.medium.com/v2/resize:fill:200:134/1*Z9Msl9UY6vp_c-dIHzYqPQ.jpeg"
+      "url": "https://miro.medium.com/v2/resize:fill:200:134/1*Z9Msl9UY6vp_c-dIHzYqPQ.jpeg",
+      "id": 2
     },
     {
       "Username": "wqw",
       "title": "No, ASAP Rocky And Jonathan Majors Are Not Being Emasculated",
-      "description": "“Emasculate” is one of those words I wish more folks simply hadn’t learned.",
-      "url": "https://miro.medium.com/v2/resize:fill:200:134/1*tD2OD40pNWLAoMqY5VXXOg.jpeg"
+      "description": "“Emasculate” is one of those words I wish more folks simply hadn't learned.",
+      "url": "https://miro.medium.com/v2/resize:fill:200:134/1*tD2OD40pNWLAoMqY5VXXOg.jpeg",
+      "id": 3
     },
     {
-      "title": "Hello this is an example blog",
-      "description": "jjnkhughjjgh",
-      "url": "olskdsdkasdkjaskdjaldks"
+      "Username": "suyas",
+      "title": "sadd",
+      "description": "sdfsdf",
+      "url": "sdfsdfsdf",
+      "id": 13
+    },
+    {
+      "Username": "suyas",
+      "title": "sdsdsd",
+      "description": "dsdsd",
+      "url": "dsdsd",
+      "id": 15
+    },
+    {
+      "Username": "suyas",
+      "title": "fgdfg",
+      "description": "fdfdf",
+      "url": "dfdf",
+      "id": 17
+    },
+    {
+      "Username": "suyas",
+      "title": "robot",
+      "description": "saasdd",
+      "url": "robot",
+      "id": 19
+    },
+    {
+      "Username": "suyas",
+      "title": "gaurang",
+      "description": "dsdsdsd",
+      "url": "gaurang",
+      "id": 21
+    },
+    {
+      "Username": "awasthi",
+      "title": "aspire",
+      "description": "aspire",
+      "url": "aspire",
+      "id": 23
+    },
+    {
+      "Username": "suyas",
+      "title": "dnsjdnfjdnsf",
+      "description": "fsdfdsf",
+      "url": "dsdsfdfdfsdf",
+      "id": 25
+    },
+    {
+      "Username": "gaurang",
+      "title": "visat",
+      "description": "visat",
+      "url": "visat",
+      "id": 28
+    },
+    {
+      "Username": "gaurang",
+      "title": "mukesh",
+      "description": "sdsdsd",
+      "url": "mukesh",
+      "id": 30
     }
   ]
 }

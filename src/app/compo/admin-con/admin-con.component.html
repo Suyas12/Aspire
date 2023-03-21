@@ -31,7 +31,8 @@
       <th scope="col"></th>
       <th scope="col">Username</th>
       <th scope="col">Blog</th>
-      <th scope="col"></th>
+      <!-- <th scope="col">description</th>
+      <th scope="col">url</th> -->
       <th scope="col"></th>
     </tr>
   </thead>
@@ -42,9 +43,9 @@
       <td>{{display.Username}}</td>
       <td>
         <tr *ngFor="let blog of Getblog">
-          <!-- <td>{{display.title}}</td>
+          <td>{{display.title}}</td>
           <td>{{display.description}}</td>
-          <td>{{display.url}}</td> -->
+          <td>{{display.url}}</td>
       </td>
       <th></th>
       <!-- <td><button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal2">EDIT</button></td> -->

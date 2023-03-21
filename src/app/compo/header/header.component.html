@@ -15,7 +15,7 @@
             </form>
             <form class="d-flex" role="login">
                 <button *ngIf ='logged() == true' routerLink="/login" class="btn btn-success" routerLinkActive="active"
-                    type="Login">Logout</button>
+                    type="Login" (click)="sessionlogout()">Logout</button>
             </form>
         </div>
     </div>
