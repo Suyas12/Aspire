@@ -1,4 +1,4 @@
-<form [formGroup]="loginForm" (ngSubmit)="gotoLogin()">
+<!-- <form [formGroup]="loginForm" (ngSubmit)="gotoLogin()">
     <div class="mb-3">
         <label for="User" class="form-label">User</label>
         <input type="User" class="form-control" id="User" aria-describedby="emailHelp" formControlName="User">
@@ -8,4 +8,40 @@
         <input type="Password" class="form-control" id="exampleInputPassword1" formControlName="Password">
     </div>
     <button class="btn btn-outline-success" type="submit">Login</button>
+</form> -->
+<form [formGroup]="loginForm" (ngSubmit)="gotoLogin()">
+    <section class="vh-100  gradient-custom">
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                    <div class="card bg-dark text-white" style="border-radius: 1rem;">
+                        <div class="card-body p-5 text-center">
+
+                            <div class="mb-md-5 mt-md-4 pb-5">
+
+                                <h2 class="fw-bold mb-2 text-uppercase" style="margin-top: -20px;">Login</h2>
+                                <br>
+                                <div class="form-outline form-white mb-4">
+                                    <label for="User" class="form-label">Username</label>
+                                    <input type="User" class="form-control" placeholder="Enter your username"  id="User" aria-describedby="emailHelp"
+                                        formControlName="User">
+                                    <!-- <input type="Username" id="Username" class="form-control form-control-lg" />
+                                    <label class="form-label" for="Username">Username</label> -->
+                                </div>
+
+                                <div class="form-outline form-white mb-4">
+                                    <label for="Password" class="form-label">Password</label>
+                                    <input type="Password" class="form-control" placeholder="Enter your password" id="exampleInputPassword1"
+                                        formControlName="Password">
+                                    <!-- <input type="password" id="typePasswordX" class="form-control form-control-lg" />
+                                    <label class="form-label" for="typePasswordX">Password</label> -->
+                                </div>
+                                <button class="btn btn-outline-primary btn-lg px-5" type="submit">Login</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </form>

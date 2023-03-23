@@ -1,25 +1,28 @@
+<!-- <tr *ngFor = "let display of GetBlog">
+<h1>{{display.Username}}</h1>
+</tr> -->
 <p align="right">
-  <button type="button"  (click)="addblg()" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">ADD</button>
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">ADD</button>
 </p>
 <br>
 <table class="table table-striped">
-    <thead>
-        <tr>
-            <th scope="col">Username</th>
-            <th scope="col">title</th>
-            <th scope="col">description</th>
-            <th scope="col">url</th>
-            <th scope="col"></th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let display of GetBlog">
-            <td>{{display.Username}}</td>
-            <td>{{display.title}}</td>
-            <td>{{display.description}}</td>
-            <td>{{display.url}}</td>
+  <thead>
+    <tr>
+      <!-- <th scope="col">Username</th> -->
+      <th scope="col">title</th>
+      <th scope="col">description</th>
+      <th scope="col">url</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let display of GetBlog">
+      <!-- <td>{{display.Username}}</td> -->
+      <td>{{display.title}}</td>
+      <td>{{display.description}}</td>
+      <td>{{display.url}}</td>
             <!-- <td><button type="button" class="btn btn-success" type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop2" (click)="editBlogs(display)" >EDIT</button></td> -->
-            <td><button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">ADD</button></td>
+            <td><button type="button" class="btn btn-danger" (click)="delBlogs(display)">DELETE</button></td>
         </tr>
     </tbody>
 </table>

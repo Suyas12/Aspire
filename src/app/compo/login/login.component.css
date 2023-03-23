@@ -1,0 +1,32 @@
+/* fallback for old browsers */
+/* Chrome 10-25, Safari 5.1-6 */
+/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+/* .gradient-custom {
+background: #ffffff;
+
+background: -webkit-linear-gradient(to right, rgb(255, 255, 255), rgb(255, 255, 255));
+
+background: linear-gradient(to right, rgb(255, 255, 255), rgb(255, 255, 255))
+} */
+.gradient-custom {
+    background: #b5a9c2;
+    
+    background: -webkit-linear-gradient(to right, rgb(212, 194, 231), rgb(126, 169, 243));
+
+    background: linear-gradient(to right, rgb(209, 166, 255), rgba(37, 117, 252, 1)) 
+    
+    
+ }
+ .card{
+    height: 450px;
+    
+ }
+ .container{
+    margin-top: -23px;
+ }
+ .btn{
+    margin-top: 25px;
+ }
+ .form-label{
+    float: left;
+ }

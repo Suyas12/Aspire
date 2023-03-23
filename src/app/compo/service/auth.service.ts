@@ -33,6 +33,11 @@ export class AuthService{
       return res;
     }))
   }
+  deleteBlgs(id:number){
+    return this.http.delete<any>("http://localhost:3000/blog/"+id).pipe(map((res:any)=>{
+      return res;
+    }))
+  }
   apiul='http://localhost:3000/user/?role=user';
   apiurl='http://localhost:3000/user';
   apiblg='http://localhost:3000/blog';

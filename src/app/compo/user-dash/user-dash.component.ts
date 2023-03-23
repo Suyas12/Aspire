@@ -80,4 +80,11 @@ export class UserDashComponent implements OnInit{
   // }
 
   }
+  delBlogs(data:any){
+    this.dis.deleteBlgs(data.id).subscribe(res=>{
+      console.log(res);
+      alert("Data deleted");
+      this.formvalue.reset();
+    })
+  }
 }
