@@ -5,6 +5,7 @@
   <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">ADD</button>
 </p>
 <br>
+<div class="container">
 <table class="table table-striped">
   <thead>
     <tr>
@@ -20,12 +21,13 @@
       <!-- <td>{{display.Username}}</td> -->
       <td>{{display.title}}</td>
       <td>{{display.description}}</td>
-      <td>{{display.url}}</td>
+      <td><img src="{{display.url}}"></td>
             <!-- <td><button type="button" class="btn btn-success" type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop2" (click)="editBlogs(display)" >EDIT</button></td> -->
             <td><button type="button" class="btn btn-danger" (click)="delBlogs(display)">DELETE</button></td>
         </tr>
     </tbody>
 </table>
+</div>
 
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
   aria-labelledby="staticBackdropLabel" aria-hidden="true">

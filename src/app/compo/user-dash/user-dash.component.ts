@@ -34,6 +34,9 @@ export class UserDashComponent implements OnInit{
 
 }
 
+refresh(){
+  location.reload();
+}
   loadBlogs(){
     this.dis.GetblogById(this.userName).subscribe((display)=>
     {
@@ -64,8 +67,9 @@ export class UserDashComponent implements OnInit{
     
     this.dis.Postblog(this.formvalue.value).subscribe(res=>{
       console.log(this.formvalue.value);
-      
+      alert("Data added");
       this.data = res;
+      this.refresh();
       // console.log(this.data);
       // if(this.data){
       //   alert("New Data added");
@@ -85,6 +89,7 @@ export class UserDashComponent implements OnInit{
       console.log(res);
       alert("Data deleted");
       this.formvalue.reset();
+      this.refresh();
     })
   }
 }
