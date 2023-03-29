@@ -21,7 +21,8 @@
       <!-- <td>{{display.Username}}</td> -->
       <td>{{display.title}}</td>
       <td>{{display.description}}</td>
-      <td><img src="{{display.url}}"></td>
+      <!-- <td>{{display.url}}</td> -->
+      <img src={{display.url}} alt="img" style="width:100px; height:100px">
             <!-- <td><button type="button" class="btn btn-success" type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop2" (click)="editBlogs(display)" >EDIT</button></td> -->
             <td><button type="button" class="btn btn-danger" (click)="delBlogs(display)">DELETE</button></td>
         </tr>

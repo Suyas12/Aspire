@@ -1,114 +1,64 @@
-/* @property --rotate {
-    syntax: "<angle>";
-    initial-value: 132deg;
-    inherits: false;
-  }
-  
-  :root {
-    --card-height: 65vh;
-    --card-width: calc(var(--card-height) / 1.5);
-  }
-  
-  
-  body {
-    min-height: 100vh;
-    background: #212534;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    box-sizing: border-box;
-  }
-  
-  
-  .card {
-    background: #191c29;
-    width: var(--card-width);
-    height: var(--card-height);
-    padding: 3px;
-    position: relative;
-    border-radius: 6px;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    display: flex;
-    font-size: 1.5em;
-    color: rgb(88 199 250 / 0%);
-    cursor: pointer;
-    font-family: cursive;
-  }
-  
-  .card:hover {
-    color: rgb(88 199 250 / 100%);
-    transition: color 1s;
-  }
-  .card:hover:before, .card:hover:after {
-    animation: none;
-    opacity: 0;
-  }
-  
-  
-  .card::before {
-    content: "";
-    width: 104%;
-    height: 102%;
-    border-radius: 8px;
-    background-image: linear-gradient(
-      var(--rotate)
-      , #5ddcff, #3c67e3 43%, #4e00c2);
-      position: absolute;
-      z-index: -1;
-      top: -1%;
-      left: -2%;
-      animation: spin 2.5s linear infinite;
-  }
-  
-  .card::after {
-    position: absolute;
-    content: "";
-    top: calc(var(--card-height) / 6);
-    left: 0;
-    right: 0;
-    z-index: -1;
-    height: 100%;
-    width: 100%;
-    margin: 0 auto;
-    transform: scale(0.8);
-    filter: blur(calc(var(--card-height) / 6));
-    background-image: linear-gradient(
-      var(--rotate)
-      , #5ddcff, #3c67e3 43%, #4e00c2);
-      opacity: 1;
-    transition: opacity .5s;
-    animation: spin 2.5s linear infinite;
-  }
-  
-  @keyframes spin {
-    0% {
-      --rotate: 0deg;
-    }
-    100% {
-      --rotate: 360deg;
-    }
-  }
-  
-  a {
-    color: #212534;
-    text-decoration: none;
-    font-family: sans-serif;
-    font-weight: bold;
-    margin-top: 2rem;
-  }
+*{
+  margin: 0px;
+  padding: 0px;
+  font-family: sans-serif;
+}
+body{
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  background: whitesmoke;
+  align-items: center;
+}
+.container{
+  margin: 0 auto;
+}
+.card{
+  height: 350px;
+  margin: 20px;
+  box-shadow: 5px 5px 20px black;
+  overflow: hidden;
+}
+img{
+  height: 500px;
+  width: 350px;
+  border-radius: 3px;
+  transition: .5s;
+}
+.intro{
+  height: 200px;
+  width: 350px;
+  padding: 6px;
+  box-sizing: border-box;
+  position: absolute;
+  transition: 0.7s all ease-in-out;
+}
+h5{
+  margin: 10px;
+  font-size: 40px;
+}
+p{
+  font-size: 20px;
+  margin: 20px;
+  visibility:hidden;
+  opacity: 0;
+}
+span{
+  font-weight: bold;
+}
 
- */
+.card:hover{
+  cursor: pointer;
+  opacity: 0.8;
+}
+.card:hover .intro{
+  height: 50px;
+  bottom: 240px;
+  color: rgb(255, 255, 255,1);
+  font-weight: bold;
+}
 
-
-
-
-
-
- .container-fluid{
-  background-color: aqua;
-  margin-top: -72px;
- }
+.card:hover p{
+  opacity: 1;
+  visibility: visible;
+}

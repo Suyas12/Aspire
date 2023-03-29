@@ -1,10 +1,11 @@
-<div class="container-fluid">
-    <div class="row mt-5">
-        <div class="col-md-4 mb-3" *ngFor="let display of Getblog">
-            <h5 class="card-title">{{display.Username}}</h5>
+<div class="container">
+    <div class="row mt-2">
+        <div class="col-md-4 mb-3 sm-2" *ngFor="let display of Getblog">
+            <!-- <h5 class="card-title">{{display.Username}}</h5> -->
+            <h2 class="text-center">{{display.Username}}</h2>
             <div class="card text-center">
-                <div class="card-body">
-                    <img src={{display.url}} alt="img" width=100% height=100%>
+                <img src={{display.url}} alt="img">
+                <div class="intro">
                     <p class="card-text">{{display.title}}</p>
                     <p class="card-text">{{display.description}}</p>
                 </div>
@@ -12,18 +13,3 @@
         </div>
     </div>
 </div>
-
-<!-- <div class="container">
-    <div class="box">
-        <div class="col-md-4 mb-3" *ngFor="let display of Getblog">
-            <div class="imgBox">
-                <img src={{display.url}} alt="img">
-            </div>
-            <div class="content">
-                <div class="card-title temp" >{{display.Username}}</div>
-                <div class="card-text temp">{{display.title}}</div>
-                <div class="card-text temp">{{display.description}}</div>
-            </div>
-        </div>
-    </div>
-</div> -->
