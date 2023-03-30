@@ -13,6 +13,9 @@ export class AdminConComponent implements OnInit{
   blogModelobj:blogData = new blogData;
   // GetAlls:any;
   Getblog:any;
+  p:number=1;
+  itemsPerPage:number=3;
+  totalBlog:any;
   constructor(private dis:AuthService, private form:FormBuilder)
   {
     dis.Getblog().subscribe((display)=>
@@ -20,6 +23,11 @@ export class AdminConComponent implements OnInit{
       // console.warn("display",display)
       console.log(display);
       this.Getblog=display;
+      console.log(this.Getblog.length);
+      this.totalBlog = this.Getblog.length / this.itemsPerPage;
+      // this.totalBlog=display.length;
+      // console.log(this.Getblog);
+      
     }
     );
   }

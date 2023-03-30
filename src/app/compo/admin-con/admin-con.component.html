@@ -1,4 +1,5 @@
 <html>
+
 <head>
   <link rel="stylesheet" hrer="user-dash.component.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
@@ -21,75 +22,43 @@
 </body>
 
 </html>
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th scope="col"></th>
-      <th scope="col"></th>
-      <th scope="col"></th>
-      <th scope="col"></th>
-      <th scope="col"></th>
-      <th scope="col"></th>
-      <th scope="col">Username</th>
-      <th scope="col">Blog</th>
-      <th scope="col"></th>
-      <th scope="col"></th>
-      <th scope="col"></th>
-      <th scope="col"></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let display of Getblog">
-      <th></th> 
-      <th></th>
-      <th></th> 
-      <th></th>
-      <th></th> 
-      <th></th>
-      <td>{{display.Username}}</td>
-      <td>{{display.title}}</td>
-      <td>{{display.description}}</td>
-      <td>{{display.url}}</td>
-      <!-- <td><button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal2">EDIT</button></td> -->
-      <td><button type="button" class="btn btn-danger" (click)="delBlogs(display)">DELETE</button></td>
-    </tr>
-  </tbody>
-</table>
+<div class="random">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col"></th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+        <th scope="col">Username</th>
+        <th scope="col">Blog</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let display of Getblog| paginate: { itemsPerPage: itemsPerPage, currentPage: p }">
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <td>{{display.Username}}</td>
+        <td>{{display.title}}</td>
+        <td>{{display.description}}</td>
+        <td>{{display.url}}</td>
+        <!-- <td><button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal2">EDIT</button></td> -->
+        <td><button type="button" class="btn btn-danger" (click)="delBlogs(display)">DELETE</button></td>
+      </tr>
+    </tbody>
+  </table>
 
-<!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Blogs</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form [formGroup]="formvalue"> -->
-          <!-- <div class="mb-3">
-            <label for="username" class="form-label">Username</label>
-            <input formControlName="Username" type="name" class="form-control" id="username"
-              aria-describedby="emailHelp">
-          </div> -->
-          <!-- <div class="mb-3">
-            <label for="username" class="form-label">Title</label>
-            <input formControlName="title" type="title" class="form-control" id="title"
-              aria-describedby="emailHelp">
-          </div>
-          <div class="mb-3">
-            <label for="role" class="form-label">Description</label>
-            <input formControlName="description" type="description" class="form-control" id="description" aria-describedby="emailHelp">
-          </div>
-          <div class="mb-3">
-            <label for="url" class="form-label">Url</label>
-            <input formControlName="url" type="url" class="form-control" id="url"
-            aria-describedby="emailHelp">
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" (click)="addedBlog()">Save changes</button>
-      </div>
-    </div>
+  <div class="text-center">
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
   </div>
-</div> -->
+</div>

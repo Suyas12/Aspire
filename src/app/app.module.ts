@@ -12,6 +12,7 @@ import { BlogsComponent } from './compo/blogs/blogs.component';
 import { UserDashComponent } from './compo/user-dash/user-dash.component';
 import { HomeComponent } from './compo/home/home.component';
 import { AdminConComponent } from './compo/admin-con/admin-con.component';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,8 @@ import { AdminConComponent } from './compo/admin-con/admin-con.component';
     NgbModule,
     HttpClientModule,
     ReactiveFormsModule,
+    BrowserModule,
+    NgxPaginationModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
