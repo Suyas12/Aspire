@@ -22,18 +22,20 @@
 </body>
 
 </html>
+<div class="container">
 <div class="random">
   <table class="table table-striped">
     <thead>
       <tr>
+        <!-- <th scope="col"></th>
         <th scope="col"></th>
         <th scope="col"></th>
         <th scope="col"></th>
         <th scope="col"></th>
-        <th scope="col"></th>
-        <th scope="col"></th>
+        <th scope="col"></th> -->
         <th scope="col">Username</th>
         <th scope="col">Blog</th>
+        <th scope="col"></th>
         <th scope="col"></th>
         <th scope="col"></th>
         <th scope="col"></th>
@@ -42,17 +44,18 @@
     </thead>
     <tbody>
       <tr *ngFor="let display of Getblog| paginate: { itemsPerPage: itemsPerPage, currentPage: p }">
+        <!-- <th></th>
         <th></th>
         <th></th>
         <th></th>
         <th></th>
-        <th></th>
-        <th></th>
+        <th></th> -->
         <td>{{display.Username}}</td>
         <td>{{display.title}}</td>
         <td>{{display.description}}</td>
-        <td>{{display.url}}</td>
+        <img src={{display.url}} alt="img" style="width:100px; height:100px">
         <!-- <td><button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal2">EDIT</button></td> -->
+        <td><button type="button" class="btn btn-success" type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop2" (click)="editBlogs(display)">EDIT</button></td>
         <td><button type="button" class="btn btn-danger" (click)="delBlogs(display)">DELETE</button></td>
       </tr>
     </tbody>
@@ -60,5 +63,39 @@
 
   <div class="text-center">
     <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </div>
+</div>
+</div>
+
+<div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Edit Data</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="formvalue">
+          <div class="mb-3">
+            <label for="title" class="form-label">title</label>
+            <input formControlName="title" type="title" class="form-control" id="title"
+              aria-describedby="emailHelp">
+          </div>
+          <div class="mb-3">
+            <label for="description" class="form-label">description</label>
+            <input formControlName="description" type="description" class="form-control" id="description" aria-describedby="emailHelp">
+          </div>
+          <div class="mb-3">
+            <label for="url" class="form-label">url</label>
+            <input formControlName="url" type="url" class="form-control" id="url">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)="editBlogsonedit(formvalue.value)">EDIT</button>
+      </div>
+    </div>
   </div>
 </div>

@@ -54,7 +54,7 @@ span{
 .card:hover .intro{
   height: 50px;
   bottom: 240px;
-  color: rgb(255, 255, 255,1);
+  color:blanchedalmond;
   font-weight: bold;
 }
 

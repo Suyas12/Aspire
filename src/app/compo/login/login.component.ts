@@ -61,7 +61,7 @@ export class LoginComponent {
   }
   e(){
     if(this.ispersonlog==false){
-      alert("wrong password");
+      alert("Something is wrong");
     }
   }
 }

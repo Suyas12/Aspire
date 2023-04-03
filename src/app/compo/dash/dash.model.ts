@@ -3,7 +3,10 @@ export class blogData {
     Username: string = '';
     role: string = '';
     Password: string = '';
-    title: string = '';
-    description: string = '';
-    url: string = '';
+  title: any;
+  description: any;
+  url: any;
+    // title: string = '';
+    // description: string = '';
+    // url: string = '';
 }

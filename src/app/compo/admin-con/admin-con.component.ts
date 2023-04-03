@@ -14,8 +14,12 @@ export class AdminConComponent implements OnInit{
   // GetAlls:any;
   Getblog:any;
   p:number=1;
-  itemsPerPage:number=3;
+  itemsPerPage:number=4;
   totalBlog:any;
+  data:any;
+  userName:any;
+  display:any;
+  blogid:any;
   constructor(private dis:AuthService, private form:FormBuilder)
   {
     dis.Getblog().subscribe((display)=>
@@ -64,22 +68,38 @@ export class AdminConComponent implements OnInit{
     })
   }
 
-  editiBlogs(data:any){
-    this.formvalue.controls['Username'].setValue(data.Username);
-    // this.formvalue.controls['role'].setValue(data.role);
-    // this.formvalue.controls['Password'].setValue(data.Password);
-    this.formvalue.controls['title'].setValue(data.title);
-    this.formvalue.controls['description'].setValue(data.description);
-    this.formvalue.controls['url'].setValue(data.url);
-  }
-
   delBlogs(data:any){
-    this.dis.deleteBlogs(data.id).subscribe(res=>{
+    this.dis.deleteBlgs(data.id).subscribe(res=>{
       console.log(res);
       alert("Data deleted");
       this.formvalue.reset();
       this.refresh();
     })
   }
+
+  editBlogs(data:any){
+    this.blogid=data.id;
+    
+    this.formvalue.controls['Username'].setValue(data.Username);
+    this.formvalue.controls['title'].setValue(data.title);
+    this.formvalue.controls['description'].setValue(data.description);
+    this.formvalue.controls['url'].setValue(data.url);
+
+  }
+  editBlogsonedit(data:any){
+    console.log(data);
+    
+    // this.blogModelobj.title=data.title;
+    // this.blogModelobj.description=data.description;
+    // this.blogModelobj.url=data.url;
+      this.dis.editblog(data,this.blogid).subscribe((res)=>{
+      console.log(res);
+      alert("Data updated successfully");
+      this.display=res;
+      this.refresh();
+    })
+    
+  }
+
 }
 

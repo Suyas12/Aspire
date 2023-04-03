@@ -15,6 +15,8 @@ export class UserDashComponent implements OnInit{
   GetBlog:any;
   data:any;
   userName:any;
+  display: any;
+  blogid:any;
 
   constructor(private dis:AuthService, private form:FormBuilder)
   {
@@ -45,17 +47,6 @@ refresh(){
       console.warn(display);
     }
     );
-
-
-
-
-    // ________________________________________
-    // this.service.Getall().subscribe(res => {
-    //   this.userlist = res;
-    //   this.dataSource = new MatTableDataSource(this.userlist);
-    //   this.dataSource.paginator = this.paginator;
-    //   this.dataSource.sort = this.sort;
-    // });
   }
 
   addblg(){
@@ -91,5 +82,28 @@ refresh(){
       this.formvalue.reset();
       this.refresh();
     })
+  }
+
+  editBlogs(data:any){
+    this.blogid=data.id;
+    
+    this.formvalue.controls['title'].setValue(data.title);
+    this.formvalue.controls['description'].setValue(data.description);
+    this.formvalue.controls['url'].setValue(data.url);
+
+  }
+  editBlogsonedit(data:any){
+    console.log(data);
+    
+    // this.blogModelobj.title=data.title;
+    // this.blogModelobj.description=data.description;
+    // this.blogModelobj.url=data.url;
+      this.dis.editblog(data,this.blogid).subscribe((res)=>{
+      console.log(res);
+      alert("Data updated successfully");
+      this.display=res;
+      this.refresh();
+    })
+    
   }
 }

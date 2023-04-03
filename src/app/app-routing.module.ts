@@ -14,7 +14,6 @@ const routes: Routes = [
   {path: 'dash' , component: DashComponent},
   {path: 'blogs' , component: BlogsComponent},
   {path: 'user.dash' , component:UserDashComponent},
-  {path: 'user.dash/:id' , component:UserDashComponent},
   {path: 'admin.con' , component:AdminConComponent}
 ];
 @NgModule({

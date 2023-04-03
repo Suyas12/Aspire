@@ -48,6 +48,7 @@
       <td>{{display.role}}</td>
       <td>{{display.Password}}</td>
       <!-- <td><button type="button" class="btn btn-success" type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop2" (click)="editBlogs(display)" >EDIT</button></td> -->
+      
       <td><button type="button" class="btn btn-danger" (click)="delBlogs(display)">DELETE</button></td>
     </tr>
   </tbody>
@@ -85,36 +86,3 @@
     </div>
   </div>
 </div>
-<!-- 22222222222222222222222222222222 -->
-<!-- <div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-  aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="staticBackdropLabel">Edit Data</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form [formGroup]="formvalue">
-          <div class="mb-3">
-            <label for="username" class="form-label">Username</label>
-            <input formControlName="Username" type="name" class="form-control" id="username"
-              aria-describedby="emailHelp">
-          </div>
-          <div class="mb-3">
-            <label for="role" class="form-label">role</label>
-            <input formControlName="role" type="role" class="form-control" id="role" aria-describedby="emailHelp">
-          </div>
-          <div class="mb-3">
-            <label for="Password" class="form-label">Password</label>
-            <input formControlName="Password" type="password" class="form-control" id="Password">
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" >EDIT</button>
-      </div>
-    </div>
-  </div>
-</div> -->

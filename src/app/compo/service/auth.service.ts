@@ -45,16 +45,22 @@ export class AuthService{
   Getblog(){
     return this.http.get(this.apiblg);
   }
+  
   GetblogById(code:any){
     return this.http.get(this.apiblg+'/?Username='+`${code}`);
   }
-  
+  editblog(blogdata:any,id:any){
+    return this.http.put(this.apiblg+'/'+id,blogdata);
+  }
   Postblog(code:any){
     return this.http.post(this.apiblg,code);
   }
   GetAlls(){
     return this.http.get(this.apiul);
   }
+  // PutAlls(){
+  //   return this.http.put(this.apiblg);
+  // }
   Getcode(code:any){
     return this.http.get(this.apiul+'/'+code);
   }
@@ -65,6 +71,7 @@ export class AuthService{
   Getbycode(code:any){
     return this.http.get(this.apiurl+'/'+code);
   }
+
 
   isperson(u:any){
 

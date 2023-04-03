@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../service/auth.service';
 
 @Component({
@@ -6,19 +6,33 @@ import { AuthService } from '../service/auth.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit{
+  sessionData: any;
+  // sessionStorage: any;
   // showBtn = false; 
-  constructor(private service:AuthService){}
+  constructor(private service:AuthService){
+     this.logged();
+  }
+    
+  
+  ngOnInit(): void {
+    if (sessionStorage.getItem('user')!=null){
+      this.sessionData = JSON.parse(sessionStorage.getItem('user')||'');
+    }
+  }
   
   logged(){
-    if(this.service.isloggedin()){
+    this.ngOnInit();
+    if(sessionStorage.getItem('user')!=null){
       return true;
-    }
+    } 
     else{
       return false;
     }
   } 
+
   sessionlogout(){
+    this.ngOnInit();
     sessionStorage.clear();
   }
 }

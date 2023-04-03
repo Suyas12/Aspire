@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup,FormBuilder } from '@angular/forms';
 import { AuthService } from '../service/auth.service';
@@ -13,7 +14,9 @@ export class DashComponent implements OnInit{
   blogModelobj:blogData = new blogData;
   GetAlls:any;
   data:any;
-  constructor(private dis:AuthService, private form:FormBuilder)
+  apiblg: any;
+  blogData: any;
+  constructor(private dis:AuthService, private form:FormBuilder ,public http:HttpClient)
   {
     dis.GetAlls().subscribe((display)=>
     {
@@ -61,7 +64,11 @@ export class DashComponent implements OnInit{
       this.refresh();
     })
   }
-
+  // onSubmit() {
+  //   this.dis.http.put(this.apiblg + '1', this.blogData).subscribe((data: any) => {
+  //     console.log('Record updated successfully');
+  //   });
+  // }
   // editBlogs(data:any){
   //   this.formvalue.controls['Username'].setValue(data.Username);
   //   this.formvalue.controls['role'].setValue(data.role);

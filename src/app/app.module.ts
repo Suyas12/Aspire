@@ -13,6 +13,7 @@ import { UserDashComponent } from './compo/user-dash/user-dash.component';
 import { HomeComponent } from './compo/home/home.component';
 import { AdminConComponent } from './compo/admin-con/admin-con.component';
 import {NgxPaginationModule} from 'ngx-pagination';
+import { UserDashModule } from './compo/user-dash/user-dash.module';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import {NgxPaginationModule} from 'ngx-pagination';
     ReactiveFormsModule,
     BrowserModule,
     NgxPaginationModule,
+    UserDashModule
   ],
   providers: [],
   bootstrap: [AppComponent]
