@@ -6,7 +6,4 @@ export class blogData {
   title: any;
   description: any;
   url: any;
-    // title: string = '';
-    // description: string = '';
-    // url: string = '';
 }

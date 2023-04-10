@@ -45,23 +45,16 @@ export class LoginComponent {
         console.log(element.Username);
         
         sessionStorage.setItem('username', element.Username); 
-        // console.log(this.showData[1]);
         sessionStorage.setItem('user', JSON.stringify(element));
         alert("Login Successfully");
         this.router.navigate(['/user.dash']);
       }
-
-  
-      // else{
-      //   alert("Invalid credentials");
-      //   this.router.navigate(['/']);
-      // }
     })
     this.e();
   }
   e(){
     if(this.ispersonlog==false){
-      alert("Something is wrong");
+      alert("Invalid credentials");
     }
   }
 }

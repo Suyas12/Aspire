@@ -1,15 +1,12 @@
-<!-- <tr *ngFor = "let display of GetBlog">
-<h1>{{display.Username}}</h1>
-</tr> -->
+<div class="container">
 <p align="right">
-  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">ADD</button>
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" (click)="onAddBlogHandler()">ADD</button>
 </p>
 <br>
 <div class="container">
 <table class="table table-striped">
   <thead>
     <tr>
-      <!-- <th scope="col">Username</th> -->
       <th scope="col">title</th>
       <th scope="col">description</th>
       <th scope="col">image</th>
@@ -18,16 +15,15 @@
   </thead>
   <tbody>
     <tr *ngFor="let display of GetBlog">
-      <!-- <td>{{display.Username}}</td> -->
       <td>{{display.title}}</td>
       <td>{{display.description}}</td>
-      <!-- <td>{{display.url}}</td> -->
       <img src={{display.url}} alt="img" style="width:100px; height:100px">
             <td><button type="button" class="btn btn-success" type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop2" (click)="editBlogs(display)">EDIT</button></td>
             <td><button type="button" class="btn btn-danger" (click)="delBlogs(display)">DELETE</button></td>
         </tr>
     </tbody>
 </table>
+</div>
 </div>
 
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
@@ -76,12 +72,11 @@
         <form [formGroup]="formvalue">
           <div class="mb-3">
             <label for="title" class="form-label">title</label>
-            <input formControlName="title" type="title" class="form-control" id="title"
-              aria-describedby="emailHelp">
+            <input formControlName="title" type="title" class="form-control" id="title">
           </div>
           <div class="mb-3">
             <label for="description" class="form-label">description</label>
-            <input formControlName="description" type="description" class="form-control" id="description" aria-describedby="emailHelp">
+            <input formControlName="description" type="description" class="form-control" id="description">
           </div>
           <div class="mb-3">
             <label for="url" class="form-label">url</label>

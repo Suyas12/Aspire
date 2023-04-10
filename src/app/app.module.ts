@@ -8,7 +8,6 @@ import { HeaderComponent } from './compo/header/header.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DashComponent } from './compo/dash/dash.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { BlogsComponent } from './compo/blogs/blogs.component';
 import { UserDashComponent } from './compo/user-dash/user-dash.component';
 import { HomeComponent } from './compo/home/home.component';
 import { AdminConComponent } from './compo/admin-con/admin-con.component';
@@ -21,7 +20,6 @@ import { UserDashModule } from './compo/user-dash/user-dash.module';
     LoginComponent,
     HeaderComponent,
     DashComponent,
-    BlogsComponent,
     UserDashComponent,
     HomeComponent,
     AdminConComponent,

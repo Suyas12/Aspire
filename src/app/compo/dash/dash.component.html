@@ -22,6 +22,7 @@
 </body>
 </html>
 
+<div class="container">
 <p align="right">
   <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">ADD</button>
 </p>
@@ -46,9 +47,7 @@
       <td>{{display.id}}</td>
       <td>{{display.Username}}</td>
       <td>{{display.role}}</td>
-      <td>{{display.Password}}</td>
-      <!-- <td><button type="button" class="btn btn-success" type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop2" (click)="editBlogs(display)" >EDIT</button></td> -->
-      
+      <td>{{display.Password}}</td>   
       <td><button type="button" class="btn btn-danger" (click)="delBlogs(display)">DELETE</button></td>
     </tr>
   </tbody>
@@ -85,4 +84,5 @@
       </div>
     </div>
   </div>
+</div>
 </div>
