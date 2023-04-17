@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup,FormBuilder } from '@angular/forms';
 import { AuthService } from '../service/auth.service';
+import { UserService } from '../service/user.service';
 import { blogData } from './dash.model';
 
 @Component({
@@ -16,9 +17,9 @@ export class DashComponent implements OnInit{
   data:any;
   apiblg: any;
   blogData: any;
-  constructor(private dis:AuthService, private form:FormBuilder ,public http:HttpClient)
+  constructor(private dis:AuthService, private form:FormBuilder, public http:HttpClient, private user:UserService)
   {
-    dis.GetAlls().subscribe((display)=>
+    user.getUser().subscribe((display)=>
     {
       // console.warn("display",display)
       console.log(display);
@@ -28,9 +29,9 @@ export class DashComponent implements OnInit{
   }
   ngOnInit(): void {
     this.formvalue = this.form.group({
-    Username: [''],
+    username: [''],
     role: [''],
-    Password: [''],
+    password: [''],
     // title: [''],
     // description: [''],
     // url: ['']
@@ -44,11 +45,11 @@ export class DashComponent implements OnInit{
   }
 
   addBlog(){
-    this.blogModelobj.Username = this.formvalue.value.Username;
+    this.blogModelobj.username = this.formvalue.value.username;
     this.blogModelobj.role = this.formvalue.value.role;
-    this.blogModelobj.Password= this.formvalue.value.Password;
+    this.blogModelobj.password= this.formvalue.value.password;
     
-    this.dis.postBlogs(this.blogModelobj).subscribe(res=>{
+    this.user.addUser(this.blogModelobj).subscribe(res=>{
       console.log(res);
       alert("New Data added");
       this.formvalue.reset();
@@ -58,8 +59,8 @@ export class DashComponent implements OnInit{
 
   delBlogs(data:any){
     this.dis.deleteBlogs(data.id).subscribe(res=>{
-      console.log(res);
       alert("Data deleted");
+      console.log(res);
       this.formvalue.reset();
       this.refresh();
     })

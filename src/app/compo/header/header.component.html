@@ -10,11 +10,11 @@
                 </li> -->
             </ul>
             <form class="d-flex" role="login">
-                <button *ngIf = 'logged() == false' routerLink="/login" class="btn btn-success" routerLinkActive="active"
+                <button *ngIf = 'logged() == false' routerLink="/login" class="btn btn-success"
                     type="Login">Login</button>
             </form>
             <form class="d-flex" role="login">
-                <button *ngIf ='logged() == true' routerLink="/login" class="btn btn-success" routerLinkActive="active"
+                <button *ngIf ='logged() == true' routerLink="/login" class="btn btn-success"
                     type="Login" (click)="sessionlogout()">Logout</button>
             </form>
         </div>

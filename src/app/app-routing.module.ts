@@ -11,9 +11,9 @@ import { AuthGuardGuard } from './services/auth-guard.guard';
 const routes: Routes = [
   {path: '' ,component:HomeComponent},
   {path: 'login' , component: LoginComponent},
-  {path: 'dash' , component: DashComponent, canActivate: [AuthGuardGuard]},
-  {path: 'user.dash' , component:UserDashComponent, canActivate: [AuthGuardGuard]},
-  {path: 'admin.con' , component:AdminConComponent, canActivate: [AuthGuardGuard]}
+  {path: 'dash' , component: DashComponent,canActivate:[AuthGuardGuard]},
+  {path: 'user.dash' , component:UserDashComponent,canActivate:[AuthGuardGuard]},
+  {path: 'admin.con' , component:AdminConComponent,canActivate:[AuthGuardGuard]}
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

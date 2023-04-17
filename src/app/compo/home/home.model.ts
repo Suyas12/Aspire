@@ -1,8 +1,8 @@
 export class blogData {
     // id: number = 0;
-    Username: string = '';
+    username: string = '';
     role: string = '';
-    Password: string = '';
+    password: string = '';
     title: string = '';
     description: string = '';
     url: string = '';

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
+import { JwtHelperService } from '@auth0/angular-jwt';
 import { AuthService } from '../service/auth.service';
 import { blogData } from './user-dash.model';
 
@@ -14,19 +15,25 @@ export class UserDashComponent implements OnInit {
   blogModelobj: blogData = new blogData;
   GetBlog: any;
   data: any;
-  userName: any;
+  username: any;
   display: any;
   blogid: any;
+  token:any;
+  role:any;
 
-  constructor(private dis: AuthService, private form: FormBuilder) {
-    this.userName = sessionStorage.getItem('username');
+  constructor(private dis: AuthService, private form: FormBuilder, private jwtHelper:JwtHelperService) {
+    this.token = localStorage.getItem('token');
+    const decodedToken = this.jwtHelper.decodeToken(this.token);
+    this.username = decodedToken.sub;
+    this.role = decodedToken.status;
+    console.log(this.username);
     this.loadBlogs();
 
   }
 
   ngOnInit(): void {
     this.formvalue = this.form.group({
-      Username: this.userName,
+      username: this.username,
       title: [''],
       description: [''],
       url: ['']
@@ -38,7 +45,7 @@ export class UserDashComponent implements OnInit {
     location.reload();
   }
   loadBlogs() {
-    this.dis.GetblogById(this.userName).subscribe((display) => {
+    this.dis.getBlogger(this.username).subscribe((display) => {
       this.GetBlog = display;
       console.warn(display);
     }
@@ -55,7 +62,7 @@ export class UserDashComponent implements OnInit {
     this.blogModelobj.title = this.formvalue.value.title;
     this.blogModelobj.description = this.formvalue.value.description;
     this.blogModelobj.url = this.formvalue.value.url;
-    this.blogModelobj.Username = this.userName;
+    this.blogModelobj.username = this.username;
 
     this.dis.Postblog(this.formvalue.value).subscribe(res => {
       console.log(this.formvalue.value);
@@ -80,9 +87,6 @@ export class UserDashComponent implements OnInit {
     this.formvalue.controls['title'].setValue(data.title);
     this.formvalue.controls['description'].setValue(data.description);
     this.formvalue.controls['url'].setValue(data.url);
-
-
-
   }
   editBlogsonedit(data: any) {
     console.log(data);

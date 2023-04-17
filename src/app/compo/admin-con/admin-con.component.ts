@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup,FormBuilder } from '@angular/forms';
 import { blogData } from '../dash/dash.model';
 import { AuthService } from '../service/auth.service';
+import { BlogsService } from '../service/blogs.service';
 
 @Component({
   selector: 'app-admin-con',
@@ -20,7 +21,7 @@ export class AdminConComponent implements OnInit{
   userName:any;
   display:any;
   blogid:any;
-  constructor(private dis:AuthService, private form:FormBuilder)
+  constructor(private dis:AuthService, private form:FormBuilder, private blog:BlogsService)
   {
     dis.Getblog().subscribe((display)=>
     {
@@ -37,7 +38,7 @@ export class AdminConComponent implements OnInit{
   }
   ngOnInit(): void {
     this.formvalue = this.form.group({
-    Username: [''],
+    username: [''],
     // role: [''],
     // Password: [''],
     title: [''],
@@ -53,14 +54,14 @@ export class AdminConComponent implements OnInit{
   }
 
   addedBlog(){
-    this.blogModelobj.Username = this.formvalue.value.Username;
+    this.blogModelobj.username = this.formvalue.value.username;
     // this.blogModelobj.role = this.formvalue.value.role;
     // this.blogModelobj.Password = this.formvalue.value.Password;
     this.blogModelobj.title= this.formvalue.value.title;
     this.blogModelobj.description= this.formvalue.value.description;
     this.blogModelobj.url= this.formvalue.value.url;
     
-    this.dis.postBlogs(this.blogModelobj).subscribe(res=>{
+    this.blog.addBlog(this.blogModelobj).subscribe(res=>{
       console.log(res);
       alert("New Data added");
       this.formvalue.reset();
@@ -70,8 +71,8 @@ export class AdminConComponent implements OnInit{
 
   delBlogs(data:any){
     this.dis.deleteBlgs(data.id).subscribe(res=>{
-      console.log(res);
       alert("Data deleted");
+      console.log(res);
       this.formvalue.reset();
       this.refresh();
     })
@@ -80,7 +81,7 @@ export class AdminConComponent implements OnInit{
   editBlogs(data:any){
     this.blogid=data.id;
     
-    this.formvalue.controls['Username'].setValue(data.Username);
+    this.formvalue.controls['username'].setValue(data.username);
     this.formvalue.controls['title'].setValue(data.title);
     this.formvalue.controls['description'].setValue(data.description);
     this.formvalue.controls['url'].setValue(data.url);

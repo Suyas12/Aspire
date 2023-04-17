@@ -15,12 +15,12 @@ export class HomeComponent implements OnInit{
   blogModelobj:blogData = new blogData;
   GetBlog:any;
   data:any;
-  userName:any;
+  username:any;
   Getblog:any;
 
   constructor(private dis:AuthService, private form:FormBuilder)
   {
-    this.userName = sessionStorage.getItem('username');
+    this.username = sessionStorage.getItem('username');
     dis.Getblog().subscribe((display)=>
     {
       // console.warn("display",display)
@@ -39,7 +39,7 @@ export class HomeComponent implements OnInit{
   ngOnInit(): void {
     // this.userName = sessionStorage.getItem('username');
     this.formvalue = this.form.group({
-    Username: this.userName,
+    username: this.username,
     title: [''],
     description: [''],
     url:['']
@@ -48,7 +48,7 @@ export class HomeComponent implements OnInit{
 }
 
 loadBlogs(){
-  this.dis.GetblogById(this.userName).subscribe((display)=>
+  this.dis.GetblogById(this.username).subscribe((display)=>
   {
     // console.warn("display",display)
     this.GetBlog=display;

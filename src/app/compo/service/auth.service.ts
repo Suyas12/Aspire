@@ -10,44 +10,48 @@ export class AuthService {
 
   isploged: any;
   postBlogs(data: any) {
-    return this.http.post<any>("http://localhost:3000/user", data).pipe(map((res: any) => {
+    return this.http.post<any>("http://localhost:8080/api/users", data).pipe(map((res: any) => {
       return res;
     }));
   }
 
   getBlogs() {
-    return this.http.get<any>("http://localhost:3000/user").pipe(map((res: any) => {
+    return this.http.get<any>("http://localhost:8080/api/users").pipe(map((res: any) => {
       console.log(res);
 
       return res;
     }))
   }
+
+  getBlogger(username:any) {
+    return this.http.get<any>("http://localhost:8080/api/blog/"+username);
+  }
   updateBlogs(data: any, id: number) {
-    return this.http.delete<any>("http://localhost:3000/user/" + id, data).pipe(map((res: any) => {
+    return this.http.post<any>("http://localhost:8080/api/users/" + id, data).pipe(map((res: any) => {
       return res;
     }))
   }
 
   deleteBlogs(id: number) {
-    return this.http.delete<any>("http://localhost:3000/user/" + id).pipe(map((res: any) => {
+    return this.http.delete<any>("http://localhost:8080/api/users"+"/" + id).pipe(map((res: any) => {
       return res;
     }))
   }
   deleteBlgs(id: number) {
-    return this.http.delete<any>("http://localhost:3000/blog/" + id).pipe(map((res: any) => {
+    return this.http.delete<any>("http://localhost:8080/api/blogs").pipe(map((res: any) => {
       return res;
     }))
   }
-  apiul = 'http://localhost:3000/user/?role=user';
-  apiurl = 'http://localhost:3000/user';
-  apiblg = 'http://localhost:3000/blog';
+  apiul = 'http://localhost:8080/api/users/?role=user';
+  apiurl = 'http://localhost:8080/api/users';
+  apiblg = 'http://localhost:8080/api/blogs';
+  apiblgs = 'http://localhost:8080/api/blog';
 
   Getblog() {
     return this.http.get(this.apiblg);
   }
-
   GetblogById(code: any) {
-    return this.http.get(this.apiblg + '/?Username=' + `${code}`);
+    return this.http.get(this.apiblg + '/?username=' + `${code}`);
   }
   editblog(blogdata: any, id: any) {
     return this.http.put(this.apiblg + '/' + id, blogdata);
@@ -56,7 +60,7 @@ export class AuthService {
     return this.http.post(this.apiblg, code);
   }
   GetAlls() {
-    return this.http.get(this.apiul);
+    return this.http.get(this.apiurl);
   }
   // PutAlls(){
   //   return this.http.put(this.apiblg);
@@ -88,7 +92,7 @@ export class AuthService {
   }
   isLoginUser() {
 
-    if (sessionStorage.getItem('user') != null) {
+    if (localStorage.getItem('token') != null) {
       return true;
     }
     else {

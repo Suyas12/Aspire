@@ -1,9 +1,9 @@
 export class blogData {
     id: number = 0;
-    Username: string = '';
+    username: string = '';
     role: string = '';
-    Password: string = '';
-  title: any;
-  description: any;
-  url: any;
+    password: string = '';
+    title: any;
+    description: any;
+    url: any;
 }

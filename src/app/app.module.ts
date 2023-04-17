@@ -13,6 +13,11 @@ import { HomeComponent } from './compo/home/home.component';
 import { AdminConComponent } from './compo/admin-con/admin-con.component';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { UserDashModule } from './compo/user-dash/user-dash.module';
+import { JwtModule } from '@auth0/angular-jwt';
+
+export function tokenGetter() {
+  return localStorage.getItem("token");
+}
 
 @NgModule({
   declarations: [
@@ -32,7 +37,12 @@ import { UserDashModule } from './compo/user-dash/user-dash.module';
     ReactiveFormsModule,
     BrowserModule,
     NgxPaginationModule,
-    UserDashModule
+    UserDashModule,JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter,
+        allowedDomains: ["localhost:4200"]
+      },
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

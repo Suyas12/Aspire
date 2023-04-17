@@ -33,9 +33,9 @@
       <th scope="col"></th>
       <th scope="col"></th>
       <th scope="col">id</th>
-      <th scope="col">Username</th>
+      <th scope="col">username</th>
       <th scope="col">role</th>
-      <th scope="col">Password</th>
+      <th scope="col">password</th>
       <!-- <th scope="col"></th> -->
       <th scope="col"></th>
     </tr>
@@ -45,9 +45,9 @@
       <th></th>
       <th></th>
       <td>{{display.id}}</td>
-      <td>{{display.Username}}</td>
+      <td>{{display.username}}</td>
       <td>{{display.role}}</td>
-      <td>{{display.Password}}</td>   
+      <td>{{display.password}}</td>   
       <td><button type="button" class="btn btn-danger" (click)="delBlogs(display)">DELETE</button></td>
     </tr>
   </tbody>
@@ -65,7 +65,7 @@
         <form [formGroup]="formvalue">
           <div class="mb-3">
             <label for="username" class="form-label">Username</label>
-            <input formControlName="Username" type="name" class="form-control" id="username"
+            <input formControlName="username" type="name" class="form-control" id="username"
               aria-describedby="emailHelp">
           </div>
           <div class="mb-3">
@@ -73,8 +73,8 @@
             <input formControlName="role" type="role" class="form-control" id="role" aria-describedby="emailHelp">
           </div>
           <div class="mb-3">
-            <label for="Password" class="form-label">Password</label>
-            <input formControlName="Password" type="password" class="form-control" id="Password">
+            <label for="password" class="form-label">Password</label>
+            <input formControlName="password" type="password" class="form-control" id="password">
           </div>
         </form>
       </div>

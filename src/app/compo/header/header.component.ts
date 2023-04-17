@@ -23,7 +23,7 @@ export class HeaderComponent implements OnInit{
   
   logged(){
     this.ngOnInit();
-    if(sessionStorage.getItem('user')!=null){
+    if(localStorage.getItem('token')!=null){
       return true;
     } 
     else{
@@ -33,6 +33,6 @@ export class HeaderComponent implements OnInit{
 
   sessionlogout(){
     this.ngOnInit();
-    sessionStorage.clear();
+    localStorage.clear();
   }
 }
