@@ -5,7 +5,6 @@ class SA6 extends Thread
   		System.out.println("Hello There this is thread.");
  	}
 }
-
 class MyThreadDemo
 {
  	public static void main(String args[])
